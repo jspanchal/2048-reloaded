@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="BrainGame.Controls.TileControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrainGame.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:game="using:BrainGame.Game"
+    mc:Ignorable="d"
+    d:DesignHeight="111" d:DesignWidth="111"
+    d:DataContext="{d:DesignInstance game:TileData}">
+
+    <Border
+        x:Name="LayoutRoot"
+        Background="{Binding BackgroundBrush}"
+        Margin="6">
+
+        <Viewbox StretchDirection="DownOnly">
+            <TextBlock
+                Text="{Binding DisplayValue}"
+                Visibility="{Binding Value, Converter={StaticResource VisibilityConverter}}"
+                Foreground="{Binding ForegroundBrush}"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontSize="48"
+                FontFamily="Segoe UI" />
+        </Viewbox>
+    </Border>
+
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>549d2b42-1234-4653-9eb3-bca1dead12fb</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Brain</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SquareUserControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ResourceConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\VisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ArrayExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FrameworkExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PointExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ScrollViewerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBoxExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\INetworkService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NetworkService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\DataStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\IDataStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\ISimpleStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\SimpleStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\AsyncHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Execute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\MessageBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\RandomManager.cs" />
+  </ItemGroup>
+</Project>

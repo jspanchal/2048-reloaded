@@ -1,0 +1,69 @@
+﻿{
+"Games":[
+	{
+		"UniqueId":"Classic",
+		"Title":"Classic",
+		"Description":"Classic 2048",
+		"ImagePath":"Assets/Classic.png",
+		"Width":4,
+		"Height":4
+	},
+	{
+		"UniqueId":"Jr",
+		"Title":"Jr",
+		"Description":"2048 jr.  For the quick game",
+		"ImagePath":"Assets/Jr.png",
+		"Width":3,
+		"Height":3
+	},
+	{
+		"UniqueId":"Insane",
+		"Title":"Insane",
+		"Description":"2048 for the insane",
+		"ImagePath":"Assets/Insane.png",
+		"Width":5,
+		"Height":5
+	},
+	{
+		"UniqueId":"ABC",
+		"Title":"AlphaBeta",
+		"Description":"2048 for those that don't like numbers",
+		"ImagePath":"Assets/AlphaBeta.png",
+		"Width":4,
+		"Height":4,
+		"Style":"ABC"
+	},
+	{
+		"UniqueId":"Squash",
+		"Title":"Squash",
+		"Description":"2048 for horizontal thinkers",
+		"ImagePath":"Assets/Squash.png",
+		"Width":4,
+		"Height":3
+	},
+	{
+		"UniqueId":"Tall",
+		"Title":"Stretch",
+		"Description":"2048 for vertical thinkers",
+		"ImagePath":"Assets/Stretch.png",
+		"Width":3,
+		"Height":4
+	},
+	{
+		"UniqueId":"ReallyTall",
+		"Title":"Really Tall",
+		"Description":"2048 for vertical thinkers",
+		"ImagePath":"Assets/ReallyTall.png",
+		"Width":2,
+		"Height":6
+	},
+	{
+		"UniqueId":"ReallyWide",
+		"Title":"Really Wide",
+		"Description":"2048 for horizontal thinkers",
+		"ImagePath":"Assets/ReallyWide.png",
+		"Width":6,
+		"Height":2
+	}
+	]
+}

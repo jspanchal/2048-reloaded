@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Name="boxtana"
+    x:Class="BrainGame.Controls.Boxtana"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrainGame.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Foreground="Blue"
+    d:DesignHeight="400"
+    d:DesignWidth="400">
+
+    <Viewbox>
+        <Grid Width="100" Height="100" Background="#01FFFFFF">
+            <Grid x:Name="OuterGrid">
+                <Path
+                    x:Name="Outer"
+                    Data="M15,15 L85,15 L85,85 L15,85 z"
+                    Height="100" Width="100" Margin="0" Stretch="None"
+                    Opacity="0.5"
+                    Stroke="{Binding Foreground, ElementName=boxtana}"
+                    StrokeThickness="10" />
+            </Grid>
+            <Grid x:Name="InnerGrid">
+                <Path
+                    x:Name="Inner"
+                    Data="M25,25 L75,25 L75,75 L25,75 z"
+                    Height="100" Width="100" Margin="0" Stretch="None"
+                    Stroke="{Binding Foreground, ElementName=boxtana}"
+                    StrokeThickness="10" />
+            </Grid>
+            <!--
+            <Grid x:Name="OuterGrid" Margin="10" d:IsHidden="True">
+                 <Border x:Name="Outer" BorderThickness="10" BorderBrush="{Binding Foreground, ElementName=boxtana}" Opacity="0.5"/>
+            </Grid>
+            <Grid x:Name="InnerGrid" Margin="20">
+                <Border x:Name="Inner" BorderThickness="10" BorderBrush="{Binding Foreground, ElementName=boxtana}" />
+            </Grid>
+			-->
+
+
+        </Grid>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>90072cbf-62ef-4b24-94ff-43f6455f5857</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>RateMyApp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\FeedbackOverlay.xaml.cs">
+      <DependentUpon>FeedbackOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FeedbackHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\StorageHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\FeedbackOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\AppResources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\ar-SA\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\de-DE\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\en-GB\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\en-US\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\es-ES\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\fi-FI\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\fr-FR\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\he-IL\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\hr-HR\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\hu-HU\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\it-IT\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\lt-LT\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\nb-NO\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\nl-NL\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\pl-PL\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\pt-BR\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\pt-PT\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\ro-RO\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\ru-RU\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\sl-SL\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\sv-SE\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\uk-UA\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\vi-VN\AppResources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Resources\zh-CN\AppResources.resw" />
+  </ItemGroup>
+</Project>

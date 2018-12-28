@@ -1,0 +1,193 @@
+﻿<brainGame:BasePage
+    x:Class="BrainGame.GamePage"
+    x:Name="pageRoot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bam="using:Brain.Animate"
+    xmlns:brainGame="using:BrainGame"
+    xmlns:controls="using:Brain.Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <brainGame:BasePage.BottomAppBar>
+        <CommandBar Style="{StaticResource MinimisedCommandBar}" Background="#7F000000">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Refresh" Label="Restart" Click="RestartButton_Click" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </brainGame:BasePage.BottomAppBar>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="MainPageGrid" Grid.Row="1">
+
+            <controls:SquareUserControl x:Name="GameGrid" Margin="{StaticResource GameMargin}">
+                <brainGame:BrainGameControl
+                    MinWidth="100" MinHeight="100"
+                    x:Name="bc" />
+            </controls:SquareUserControl>
+
+            <Grid
+                x:Name="ManipulationGrid"
+                Background="Transparent"
+                ManipulationMode="TranslateX,TranslateY"
+                ManipulationCompleted="OnManipulationCompleted" />
+
+            <Grid
+                x:Name="PlayGrid"
+                Background="#80000000">
+
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button
+                        x:Name="PlayButton"
+                        Style="{StaticResource ClearButtonStyle}"
+                        Click="PlayButton_Click">
+
+                        <Grid Width="200" Height="200">
+                            <Path
+                                Fill="{StaticResource AppAccentBrush}"
+                                Stretch="Uniform" Margin="40"
+                                Data="M5.9 9.777C5.9 4.377 10.276 0 15.676 0c1.677 0 2.74 0.438 4.61 1.182l68.577 39.9c3.189 1.89 4.666 4.927 5.236 8.428  v0.982c-0.57 3.499-2.047 6.537-5.236 8.428L20.287 98.819c-1.871 0.745-2.934 1.181-4.61 1.181c-5.4 0-9.776-4.377-9.776-9.777  V9.777z" />
+                        </Grid>
+
+                    </Button>
+
+                    <Button
+                        x:Name="ShareButton"
+                        Style="{StaticResource ClearButtonStyle}"
+                        Click="ShareButton_Click"
+                        Visibility="{Binding ShowShare, Converter={StaticResource VisibilityConverter}}">
+                        <Grid Width="200" Height="200">
+                            <Path
+                                Fill="{StaticResource TileBackgroundBrush16}"
+                                Stretch="Uniform"
+                                Margin="40"
+                                Data="F1M1753.16,1373.61C1751.09,1373.61,1749.19,1372.94,1747.62,1371.82L1729.47,1381.27 1747.42,1390.61C1749.02,1389.4 1750.99,1388.65 1753.16,1388.65 1758.45,1388.65 1762.73,1392.94 1762.73,1398.22 1762.73,1403.51 1758.45,1407.8 1753.16,1407.8 1747.87,1407.8 1743.59,1403.51 1743.59,1398.22 1743.59,1398.11 1743.62,1398 1743.62,1397.88L1725.63,1388.52C1724.03,1389.73 1722.05,1390.47 1719.89,1390.47 1714.6,1390.47 1710.31,1386.19 1710.31,1380.9 1710.31,1375.61 1714.6,1371.33 1719.89,1371.33 1722.3,1371.33 1724.49,1372.26 1726.17,1373.73L1743.65,1364.64C1743.64,1364.44 1743.59,1364.24 1743.59,1364.04 1743.59,1358.75 1747.87,1354.46 1753.16,1354.46 1758.45,1354.46 1762.73,1358.75 1762.73,1364.04 1762.73,1369.32 1758.45,1373.61 1753.16,1373.61z" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+
+        <Border
+            x:Name="AchievementBalloon"
+            Grid.Row="1"
+            Background="#CC606060"
+            Canvas.ZIndex="1001" IsHitTestVisible="False"
+            Height="150" Margin="0,0,0,40" VerticalAlignment="Center"
+            Padding="20" Opacity="0">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Path
+                    Grid.Row="1"
+                    Data="M32.556919,7.5459137C32.388317,13.155273 31.348522,16.927387 30.031527,19.709999 34.058911,16.967789 37.8205,13.806376 38.374001,7.5459137z M3.3650003,7.5459137C3.9177938,13.806376 7.6801546,16.967789 11.706803,19.709999 10.389719,16.927387 9.349994,13.155274 9.1814569,7.5459137z M20.868891,2.8440046C14.533635,2.8401542 12.059054,5.4313951 12.062254,6.3923125 12.062254,7.3584399 14.532935,9.9443407 20.868891,9.9508705 27.205345,9.9443407 29.676028,7.3584399 29.676028,6.3923125 29.679327,5.4313951 27.204745,2.8401542 20.868891,2.8440046z M20.8699,0C27.67,0,31.0189,2.2226601,32.145199,4.2994399L40.0984,4.2994399C41.004502,4.2994399 41.739601,5.0272799 41.739601,5.9231601 41.739601,15.8814 35.4063,20.076799 30.3177,23.4492 26.156901,26.204399 23.6068,28.0651 23.6068,31.429701L23.6068,34.4688C27.9765,34.954399 31.1875,36.571602 31.1875,38.493401 31.1875,40.7981 26.5684,42.666698 20.8699,42.666698 15.1719,42.666698 10.5528,40.7981 10.5528,38.493401 10.5528,36.571602 13.7637,34.954399 18.133499,34.4688L18.133499,31.429701C18.133499,28.0651 15.5833,26.204399 11.4225,23.4492 6.3339804,20.076799 2.9041269E-07,15.8814 0,5.9231601 2.9041269E-07,5.0272799 0.73506629,4.2994399 1.6413205,4.2994399L9.5957206,4.2994399C10.7213,2.2226601,14.070401,0,20.8699,0z"
+                    Stretch="Uniform"
+                    Fill="{StaticResource TileBackgroundBrush8}"
+                    Width="54" Height="54"
+                    Visibility="{Binding ShowTrophy, Converter={StaticResource VisibilityConverter}}"
+                    Margin="0,0,12,0" />
+                <TextBlock
+                    Text="{Binding AchievementTitle}" HorizontalAlignment="Center"
+                    Style="{StaticResource SubTitleText}"
+                    Visibility="{Binding AchievementTitle, Converter={StaticResource VisibilityConverter}}"
+                    FontSize="21.333" Grid.Column="1" />
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <TextBlock
+                        TextWrapping="Wrap"
+                        Text="{Binding AchievementText}"
+                        Style="{StaticResource AchievementText}" />
+                </Viewbox>
+            </Grid>
+
+            <bam:AnimationTrigger.Idle>
+                <bam:FloatAnimation Distance="10" />
+            </bam:AnimationTrigger.Idle>
+
+        </Border>
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                x:Name="BackButton"
+                Visibility="{Binding IsWindowsApp, Converter={StaticResource VisibilityConverter}}"
+                Foreground="{StaticResource SubtleBrush}"
+                Command="{Binding NavigationHelper.GoBackCommand}"
+                Style="{StaticResource BackButtonNormalStyle}"
+                VerticalAlignment="Top" />
+
+            <Grid Margin="12,24,12,0" Grid.Column="1">
+                <Grid VerticalAlignment="Top" Margin="12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox HorizontalAlignment="Left">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Text="SCORE"
+                                Style="{StaticResource SubTitleText}"
+                                Visibility="{Binding TotalScore, Converter={StaticResource VisibilityConverter}}" />
+                            <TextBlock
+                                Text="{Binding TotalScore}"
+                                Style="{StaticResource ScoreText}"
+                                Visibility="{Binding TotalScore, Converter={StaticResource VisibilityConverter}}" />
+                        </StackPanel>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="2" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Text="BEST"
+                                Style="{StaticResource SubTitleText}"
+                                HorizontalAlignment="Right"
+                                Foreground="{StaticResource SubtleBrush}"
+                                Visibility="{Binding BestScore, Converter={StaticResource VisibilityConverter}}" />
+                            
+                            <TextBlock
+                                Text="{Binding BestScore}"
+                                Style="{StaticResource ScoreText}"
+                                HorizontalAlignment="Right"
+                                Foreground="{StaticResource SubtleBrush}"
+                                Visibility="{Binding BestScore, Converter={StaticResource VisibilityConverter}}" />
+                        </StackPanel>
+                    </Viewbox>
+
+                    <Image
+                        Source="/Assets/ApplicationIcon100.png"
+                        Height="100" VerticalAlignment="Top"
+                        Grid.Column="1" />
+
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+
+    </Grid>
+
+</brainGame:BasePage>

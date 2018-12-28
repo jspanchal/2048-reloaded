@@ -1,0 +1,49 @@
+﻿<local:BasePage
+    x:Name="pageRoot"
+    x:Class="BrainGame.TestBoxPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrainGame"
+    xmlns:common="using:BrainGame.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:BrainGame.Controls"
+    mc:Ignorable="d">
+    <local:BasePage.TopAppBar>
+        <CommandBar>
+            <AppBarButton Click="One_OnClick">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="1" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Click="Two_OnClick">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="2" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Click="Three_OnClick">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="3" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </local:BasePage.TopAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+
+            <controls:Boxtana
+                x:Name="Boxtana"
+                Margin="40" Foreground="Aquamarine"
+                Tapped="Boxtana_OnTapped" />
+
+        </Grid>
+
+    </Grid>
+</local:BasePage>

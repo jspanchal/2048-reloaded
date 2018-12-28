@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>bdd646ad-0efa-40bd-89c9-bbcc2d7a9b65</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BrainGame</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)AnimationDefinitions\ExpandAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnimationDefinitions\SwapRightOutAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BrainGameControl.xaml.cs">
+      <DependentUpon>BrainGameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Boxtana.xaml.cs">
+      <DependentUpon>Boxtana.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\TileControl.xaml.cs">
+      <DependentUpon>TileControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\GameDefinitions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataModel\GameDefinitionSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\BinaryGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\BinaryGrid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\SavedGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\TileData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\XY.cs" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ApplicationIcon100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ApplicationIcon200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AlphaBeta.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Classic.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Insane.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Jr.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ReallyTall.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ReallyWide.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Squash.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Stretch.png" />
+    <Content Include="$(MSBuildThisFileDirectory)DataModel\GameDefinitions.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\LightGray.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\MediumGray.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DarkGray.png" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)BrainGameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Boxtana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\TileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
